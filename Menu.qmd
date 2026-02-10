@@ -86,6 +86,7 @@ dinners <- c("website/AfricanPeanutSoup.html",
 ```
 
 ```{r}
+#| echo: false
 # Reading all files
 breakfast_sample = sample(breakfasts, size = 1)
 dinner_sample = sample(dinners, size = 3)
@@ -128,7 +129,17 @@ full_recipe = function(recipe){
 ```
 
 # Ingredients
-
+```{r}
+#| results: 'asis'
+#| echo: false
+all_recipes = list(recipe1, recipe2, recipe3, breakfast)
+for (i in 1:length(all_recipes)){
+  ingredients.section = html_element(all_recipes[[i]],"#ingredients")
+  ingredients = html_elements(ingredients.section, "li")
+  formatted_list <- paste("-", html_text(ingredients))
+  cat(formatted_list, sep = "\n")
+}
+```
 \newpage
 
 # Recipe One
