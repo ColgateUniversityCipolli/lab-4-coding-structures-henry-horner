@@ -303,7 +303,7 @@ window.Quarto = {
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(df)                <span class="co"># How many rows to we have to fill?</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a>df<span class="sc">$</span>x12 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="fu">nrow</span>(df))   <span class="co"># Create an empty column for x12</span></span>
 <span id="cb17-3"><a href="#cb17-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(df)){</span>
-<span id="cb17-4"><a href="#cb17-4"></a>  df<span class="sc">$</span>x12[i] <span class="ot">=</span> df<span class="sc">$</span>x1[i] <span class="sc">+</span> df<span class="sc">$</span>x2[i]</span>
+<span id="cb17-4"><a href="#cb17-4"></a>  df<span class="sc">$</span>x12[i] <span class="ot">=</span> df<span class="sc">$</span>x1[i] <span class="sc">*</span> df<span class="sc">$</span>x2[i]</span>
 <span id="cb17-5"><a href="#cb17-5"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p></p>
@@ -326,16 +326,16 @@ window.Quarto = {
 <span id="cb18-10"><a href="#cb18-10"></a><span class="fu">print</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   x1 x2 x3 x12 total.score
-1   8  1  8   9           9
-2   3  7  2  10          11
-3   5  3  3   8          10
-4   3  6  2   9          10
+1   8  1  8   8           9
+2   3  7  2  21          11
+3   5  3  3  15          10
+4   3  6  2  18          10
 5   2  2  3   4           3
-6   3  8 10  11           4
-7   1 10  1  11          11
-8   2  6  1   8           9
-9   6  2 10   8           4
-10  2  4  1   6           7</code></pre>
+6   3  8 10  24           4
+7   1 10  1  10          11
+8   2  6  1  12           9
+9   6  2 10  12           4
+10  2  4  1   8           7</code></pre>
 </div>
 </div>
 <p></p>

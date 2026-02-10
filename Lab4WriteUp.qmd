@@ -168,7 +168,7 @@ Below, I create an empty column called `x12`. Fill in the details of the `for(..
 n <- nrow(df)                # How many rows to we have to fill?
 df$x12 <- rep(NA, nrow(df))   # Create an empty column for x12
 for(i in 1:nrow(df)){
-  df$x12[i] = df$x1[i] + df$x2[i]
+  df$x12[i] = df$x1[i] * df$x2[i]
 }
 ```
 
