@@ -472,8 +472,8 @@ window.Quarto = {
 <p></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>source_link <span class="ot">=</span> <span class="fu">html_attr</span>(image.element, <span class="st">"src"</span>)</span>
-<span id="cb30-2"><a href="#cb30-2"></a>full_link <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">"website/"</span>, source_link, <span class="at">sep =</span> <span class="st">""</span>)</span>
-<span id="cb30-3"><a href="#cb30-3"></a>full_link</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb30-2"><a href="#cb30-2"></a>image.url <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">"website/"</span>, source_link, <span class="at">sep =</span> <span class="st">""</span>)</span>
+<span id="cb30-3"><a href="#cb30-3"></a>image.url</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "website/images/KimchiGrilledCheese.jpg"</code></pre>
 </div>
@@ -485,24 +485,31 @@ window.Quarto = {
 <p>Now that we have all the things we need, let’s try to print the recipe. Below, I have written code to print from the objects. One by one, remove <code>#| eval: false</code> from the YAML header and add <code>#| echo: false</code> and <code>#| results: 'asis'</code>, and test. Let me know if you’re stuck!</p>
 <p><strong>Image</strong></p>
 <p></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># width="50%" shrinks the image for printing</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a><span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">'&lt;img src="'</span>, image.url, <span class="st">'" style="width: 50%; height: auto;"&gt;'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<p><img src=" website/images/KimchiGrilledCheese.jpg " style="width: 50%; height: auto;"></p>
 <p></p>
 <p><strong>Ingredients</strong></p>
 <p></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>formatted_list <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"-"</span>, <span class="fu">html_text</span>(ingredients))</span>
-<span id="cb33-2"><a href="#cb33-2"></a><span class="fu">cat</span>(formatted_list, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<ul>
+<li>1/8 tsp chili flakes</li>
+<li>4 garlic cloves</li>
+<li>5 oz spinach</li>
+<li>1 tsp gochujang</li>
+<li>3 tsp mayonnaise</li>
+<li>2/3 cup kimchi</li>
+<li>4 slices of bread</li>
+<li>2/3 cup cheddar cheese</li>
+<li>4 tablespoons everything seasoning.</li>
+</ul>
 <p></p>
 <p><strong>Instructions</strong></p>
 <p></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>formatted_list <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"1."</span>, <span class="fu">html_text</span>(instructions))</span>
-<span id="cb34-2"><a href="#cb34-2"></a><span class="fu">cat</span>(formatted_list, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<ol type="1">
+<li>In a frying pan, heat 2 tablespoons olive oil with chili flakes.</li>
+<li>Add spinach and cook until wilted.</li>
+<li>Mix gochujang and mayonnaise in a small bowl and spread on one side of each slice of bread. Sprinkle with everything seasoning and press it into the bread.</li>
+<li>Build sandwiches by layering spinach, kimchi, and cheese between two slices of bread.</li>
+<li>Fry in butter until golden brown on both sides.</li>
+</ol>
 <p></p>
 </section>
 </section>
