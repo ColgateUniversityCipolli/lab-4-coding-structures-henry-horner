@@ -390,13 +390,7 @@ window.Quarto = {
 <p><strong>Solution</strong></p>
 <p></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">read_html</span>(<span class="st">"website/KimchiGrilledCheese.html"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{html_document}
-&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"&gt;
-[1] &lt;head&gt;\n&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8 ...
-[2] &lt;body class="nav-fixed quarto-light"&gt;\n\n&lt;div id="quarto-search-results"&gt; ...</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>KGC <span class="ot">=</span> <span class="fu">read_html</span>(<span class="st">"website/KimchiGrilledCheese.html"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p></p>
 </section>
@@ -404,6 +398,12 @@ window.Quarto = {
 <h2 data-number="2.3" class="anchored" data-anchor-id="part-c-1"><span class="header-section-number">2.3</span> Part c</h2>
 <p>Open the html file in a web browser and open developer tools. In chrome-based browsers, you can do this by pressing the three verticle dots in the upper-right corner, clicking “more tools”, then “developer tools”.</p>
 <p>Find the name of the Ingredients section of the website and pull the HTML of the function using <code>html_element(...)</code> and save the results to an object called <code>ingredients.section</code>. <br> <strong>Hint</strong>: You can ask for elements by id using a preceeding “#”. See <code>?html_element(...)</code> for a helpful example.</p>
+<p><strong>Solution</strong></p>
+<p></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>ingredients.section <span class="ot">=</span> <span class="fu">html_element</span>(KGC,<span class="st">"#ingredients"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p></p>
 </section>
 <section id="part-d-1" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="part-d-1"><span class="header-section-number">2.4</span> Part d</h2>
