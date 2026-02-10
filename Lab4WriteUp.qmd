@@ -170,6 +170,8 @@ df$x12 <- rep(NA, nrow(df))   # Create an empty column for x12
 for(i in 1:nrow(df)){
   df$x12[i] = df$x1[i] * df$x2[i]
 }
+# or
+df$x12 = df$x1 * df$x2
 ```
 
 ## Part i
@@ -189,11 +191,32 @@ df$total.score = rep(NA, n)
 for (row in 1:n){
   df$total.score[row] = calculate.score(df$x1[row], df$x2[row], df$x3[row])
 }
+# or
+df$total.score = (df$x1 * 2) + df$x2 - df$x3
 print(df)
 ```
 
 ## Part j
 Create a function called `evaluate.row(...)` that takes one argument and returns "low" when the argument is less than 4, "mid" when the argument is between 4 and 7 (inclusive), and "high" when the arguement is 8 or larger. Then, use `sapply(...)` to apply it to column `x1`.
+
+**Solution:**
+```{r}
+#| size: "scriptsize"
+evaluate.row = function(x){
+  if (x < 4){
+    return("low")
+  }
+  else if (x >= 4 && x <= 7){
+    return("mid")
+  }
+  else{
+    return("high")
+  }
+}
+df$evaluation = sapply(df$x1, evaluate.row)
+# or
+df$evaluation = ifelse(df$x1 < 4, "low", ifelse(df$x1 <= 7, "mid", "high"))
+```
 
 ## Part k
 Did we need to use loops or functions in (h.)-(j.)? That is, can we use vectorization to attain the same results in 1 line each? Where it is possible, write the line of code. Where it is not, explain why.
