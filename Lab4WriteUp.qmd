@@ -155,8 +155,8 @@ Create a sequence from 1 to 10 by 2 and use it to print the odd rows of the data
 **Solution:**
 ```{r}
 #| size: "scriptsize"
-seq1 = seq(1,10,2)
-for (i in seq1){
+odd = seq(1,10,2)
+for (i in odd){
   print(df[i, ])
 }
 ```
@@ -168,7 +168,7 @@ Below, I create an empty column called `x12`. Fill in the details of the `for(..
 n <- nrow(df)                # How many rows to we have to fill?
 df$x12 <- rep(NA, nrow(df))   # Create an empty column for x12
 for(i in 1:nrow(df)){
-  # REPLACE WITH THE NECESSARY CODE
+  df$x12[i] = df$x1[i] + df$x2[i]
 }
 ```
 
