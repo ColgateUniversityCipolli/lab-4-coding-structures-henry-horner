@@ -270,6 +270,12 @@ Now, we want to obtain all of the itemized items. Find the element type the indi
 ## Part e
 Similar to Part c. Find the name of the Instructions section of the website and pull the HTML of the function using `html_element(...)` and save the results to an object called `instructions.section`.<br/>
 
+**Solution**
+```{r}
+#| size: "scriptsize"
+instructions.section = html_element(KGC, "#instructions")
+```
+
 ## Part f
 Now, we want to obtain all of the enumerated items. Find the element type the individual instructions and pull all of them from `instructions.section` using `html_elements(...)` (note the added s) and save the results to an object called `instructions`.
 
