@@ -213,9 +213,9 @@ evaluate.row = function(x){
     return("high")
   }
 }
-df$evaluation = sapply(df$x1, evaluate.row)
+df$evaluated = sapply(df$x1, evaluate.row)
 # or
-df$evaluation = ifelse(df$x1 < 4, "low", ifelse(df$x1 <= 7, "mid", "high"))
+df$evaluated = ifelse(df$x1 < 4, "low", ifelse(df$x1 <= 7, "mid", "high"))
 ```
 
 ## Part k
@@ -226,11 +226,23 @@ Did we need to use loops or functions in (h.)-(j.)? That is, can we use vectoriz
 ## Part a
 
 Install and load the `rvest` package [@rvest].
+**Solution**
+```{r}
+#| size: "scriptsize"
+#install.packages("rvest")
+library(rvest)
+```
 
 ## Part b
 
 Load the html of the `website/KimchiGrilledCheese.html` using the `read_html()` function. We will use the Kimchi Grilled Cheese recipe as our prototype and extend this workflow to all recipes, so try to be as general as possible. If you do look at it, you'll notice it contains the html we saw in the developer tools in class.<br/>
 **Hint**: You can use `read_html(...)` like `read.csv(...)`. Don't forget you can use the documentation to help use it.
+
+**Solution**
+```{r}
+#| size: "scriptsize"
+read_html("website/KimchiGrilledCheese.html")
+```
 
 ## Part c
 
