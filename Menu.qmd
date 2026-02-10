@@ -50,6 +50,7 @@ library(tidyverse)
 <!-- Code For Building Menu Here -->
 ```{r}
 #| include: false
+library(rvest)
 breakfasts <- c("website/BerryMelonSmoothie.html",
                 "website/BiscuitsAndGravy.html",
                 "website/BreakfastCheesecake.html",
@@ -59,7 +60,7 @@ breakfasts <- c("website/BerryMelonSmoothie.html",
                 "website/OvernightOats.html",
                 "website/PumpkinToast.html",
                 "website/TropicalSmoothie.html")
-dinner <- c("website/AfricanPeanutSoup.html",
+dinners <- c("website/AfricanPeanutSoup.html",
             "website/Alfredo.html",
             "website/ArugulaPasta.html",
             "website/AutumnGrainBowl.html",
@@ -96,7 +97,7 @@ breakfast = read_html(breakfast_sample[1])
 full_recipe = function(recipe){
   #| echo: false
   #| results: 'asis'
-  # width="50%" shrinks the image for printing
+  title = html_element(recipe, "h1") |> html_text()
 
   ingredients.section = html_element(recipe,"#ingredients")
   ingredients = html_elements(ingredients.section, "li")
@@ -105,11 +106,24 @@ full_recipe = function(recipe){
   image.element = html_element(recipe, (".figure-img"))
   source_link = html_attr(image.element, "src")
   image.url = paste("website/", source_link, sep = "")
-  cat(paste('<img src="', image.url, '" style="width: 50%; height: auto;">'))
-  formatted_list <- paste("-", html_text(ingredients))
-  cat(formatted_list, sep = "\n")
-  formatted_list <- paste("1.", html_text(instructions))
-  cat(formatted_list, sep = "\n")
+  formatted_list1 <- paste("-", html_text(ingredients))
+  formatted_list2 <- paste("1.", html_text(instructions))
+
+  cat("\n")
+  cat("\n")
+  cat("\n")
+  #cat(paste('<img src="', image.url, '" style="width: 50%; height: auto;">'))
+  cat(paste('![', title, '](', image.url, "){width=50%}"))
+  cat("\n")
+  cat("\n")
+  cat("## Ingredients")
+  cat("\n")
+  cat("\n")
+  cat(formatted_list1, sep = "\n")
+  cat("\n")
+  cat("## Instructions")
+  cat("\n")
+  cat(formatted_list2, sep = "\n")
 }
 ```
 
@@ -118,7 +132,11 @@ full_recipe = function(recipe){
 \newpage
 
 # Recipe One
-
+```{r}
+#| results: 'asis'
+#| echo: false
+full_recipe(recipe1)
+```
 \newpage
 
 # Recipe Two
