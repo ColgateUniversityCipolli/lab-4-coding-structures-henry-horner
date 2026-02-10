@@ -140,11 +140,24 @@ full_recipe(recipe1)
 \newpage
 
 # Recipe Two
-
+```{r}
+#| results: 'asis'
+#| echo: false
+full_recipe(recipe2)
+```
 \newpage
 
 # Recipe Three
-
+```{r}
+#| results: 'asis'
+#| echo: false
+full_recipe(recipe3)
+```
 \newpage
 
 # Breakfast Recipe
+```{r}
+#| results: 'asis'
+#| echo: false
+full_recipe(breakfast)
+```
