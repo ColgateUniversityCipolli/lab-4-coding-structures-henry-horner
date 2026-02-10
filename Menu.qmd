@@ -84,6 +84,35 @@ dinner <- c("website/AfricanPeanutSoup.html",
             "website/Shakshuka.html")
 ```
 
+```{r}
+# Reading all files
+breakfast_sample = sample(breakfasts, size = 1)
+dinner_sample = sample(dinners, size = 3)
+recipe1 = read_html(dinner_sample[1])
+recipe2 = read_html(dinner_sample[2])
+recipe3 = read_html(dinner_sample[3])
+breakfast = read_html(breakfast_sample[1])
+
+full_recipe = function(recipe){
+  #| echo: false
+  #| results: 'asis'
+  # width="50%" shrinks the image for printing
+
+  ingredients.section = html_element(recipe,"#ingredients")
+  ingredients = html_elements(ingredients.section, "li")
+  instructions.section = html_element(recipe, "#instructions")
+  instructions = html_elements(instructions.section, "li")
+  image.element = html_element(recipe, (".figure-img"))
+  source_link = html_attr(image.element, "src")
+  image.url = paste("website/", source_link, sep = "")
+  cat(paste('<img src="', image.url, '" style="width: 50%; height: auto;">'))
+  formatted_list <- paste("-", html_text(ingredients))
+  cat(formatted_list, sep = "\n")
+  formatted_list <- paste("1.", html_text(instructions))
+  cat(formatted_list, sep = "\n")
+}
+```
+
 # Ingredients
 
 \newpage
