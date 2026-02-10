@@ -356,9 +356,17 @@ Read [https://www.scrapingbee.com/blog/is-web-scraping-legal/](Is Web Sraping Le
 ## Conditionals
 Did you use conditional statements in your code? If yes, how. If not, are there places you could have used them but did something else?
 
+**Answer:**
+I didn't see a need for conditionals in making the menu since I used a single function that loaded and printed all the data for an abritrary recipe html. Maybe conditionals could have been used in making sure the correct recipe is used in the function.
+
 ## Loops
 Did you use loops in your code? If yes, how. If not, are there places you could have used them but did something else?
+
+**Answer:**
+Yes, I used a loop in the grocery list section so that it would print out the ingredients for each recipe that is on the menu.
 
 ## Functions
 Did you use functions in your code? If yes, how. If not, are there places you could have used them but did something else?
 
+**Answer:**
+Yes, I used a generic function at the beginning to create an easy way to implement the same html element collections and printing on an arbitrary recipe. The function pulled all the elements and at the end printed them out in the correct order so that all it needed was the already read html file as an input.
